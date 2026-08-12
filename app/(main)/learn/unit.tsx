@@ -1,4 +1,5 @@
 import { lessons, units } from "@/db/schema";
+import { type Locale } from "@/lib/i18n";
 
 import { LessonButton } from "./lesson-button";
 import { UnitBanner } from "./unit-banner";
@@ -17,6 +18,7 @@ type UnitProps = {
       })
     | undefined;
   activeLessonPercentage: number;
+  locale: Locale;
 };
 
 export const Unit = ({
@@ -25,10 +27,11 @@ export const Unit = ({
   lessons,
   activeLesson,
   activeLessonPercentage,
+  locale,
 }: UnitProps) => {
   return (
     <>
-      <UnitBanner title={title} description={description} />
+      <UnitBanner title={title} description={description} locale={locale} />
 
       <div className="relative flex flex-col items-center">
         {lessons.map((lesson, i) => {
@@ -44,6 +47,7 @@ export const Unit = ({
               current={isCurrent}
               locked={isLocked}
               percentage={activeLessonPercentage}
+              locale={locale}
             />
           );
         })}

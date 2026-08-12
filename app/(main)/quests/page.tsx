@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { UserProgress } from "@/components/user-progress";
 import { QUESTS } from "@/constants";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
+import { getLocaleFromCourse, questTitle, t } from "@/lib/i18n";
 
 const QuestsPage = async () => {
   await auth.protect();
@@ -24,6 +25,7 @@ const QuestsPage = async () => {
   if (!userProgress || !userProgress.activeCourse) redirect("/courses");
 
   const isPro = !!userSubscription?.isActive;
+  const locale = getLocaleFromCourse(userProgress.activeCourse.title);
 
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
@@ -34,7 +36,7 @@ const QuestsPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {!isPro && <Promo />}
+        {!isPro && <Promo locale={locale} />}
       </StickyWrapper>
 
       <FeedWrapper>
@@ -42,10 +44,10 @@ const QuestsPage = async () => {
           <Image src="/quests.svg" alt="Quests" height={90} width={90} />
 
           <h1 className="my-6 text-center text-2xl font-bold text-neutral-800">
-            Quests
+            {t(locale, "questsHeading")}
           </h1>
           <p className="mb-6 text-center text-lg text-muted-foreground">
-            Complete quests by earning points.
+            {t(locale, "questsSubtitle")}
           </p>
 
           <ul className="w-full">
@@ -66,7 +68,7 @@ const QuestsPage = async () => {
 
                   <div className="flex w-full flex-col gap-y-2">
                     <p className="text-xl font-bold text-neutral-700">
-                      {quest.title}
+                      {questTitle(quest.value, locale)}
                     </p>
 
                     <Progress value={progress} className="h-3" />

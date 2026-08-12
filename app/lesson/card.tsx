@@ -30,15 +30,20 @@ export const Card = ({
   disabled,
   type,
 }: CardProps) => {
+  // react-use's types require `src`, but the <audio> element itself is fine
+  // without one — omitting it (rather than passing "") avoids the browser
+  // treating an empty src as "reload this page".
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [audio, _, controls] = useAudio({ src: audioSrc || "" });
+  const [audio, _, controls] = useAudio({
+    src: audioSrc ?? undefined,
+  } as Parameters<typeof useAudio>[0]);
 
   const handleClick = useCallback(() => {
     if (disabled) return;
 
-    void controls.play();
+    if (audioSrc) void controls.play();
     onClick();
-  }, [disabled, onClick, controls]);
+  }, [disabled, onClick, controls, audioSrc]);
 
   useKey(shortcut, handleClick, {}, [handleClick]);
 
@@ -50,7 +55,7 @@ export const Card = ({
         selected && "border-sky-300 bg-sky-100 hover:bg-sky-100",
         selected &&
           status === "correct" &&
-          "border-green-300 bg-green-100 hover:bg-green-100",
+          "border-indigo-300 bg-indigo-100 hover:bg-indigo-100",
         selected &&
           status === "wrong" &&
           "border-rose-300 bg-rose-100 hover:bg-rose-100",
@@ -76,7 +81,7 @@ export const Card = ({
           className={cn(
             "text-sm text-neutral-600 lg:text-base",
             selected && "text-sky-500",
-            selected && status === "correct" && "text-green-500",
+            selected && status === "correct" && "text-indigo-500",
             selected && status === "wrong" && "text-rose-500"
           )}
         >
@@ -89,7 +94,7 @@ export const Card = ({
             selected && "border-sky-300 text-sky-500",
             selected &&
               status === "correct" &&
-              "border-green-500 text-green-500",
+              "border-indigo-500 text-indigo-500",
             selected && status === "wrong" && "border-rose-500 text-rose-500"
           )}
         >

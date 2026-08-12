@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 import { getLesson, getUserProgress, getUserSubscription } from "@/db/queries";
+import { getLocaleFromCourse } from "@/lib/i18n";
 
 import { Quiz } from "../quiz";
 
@@ -33,6 +34,8 @@ const LessonIdPage = async ({ params }: LessonIdPageProps) => {
       lesson.challenges.length) *
     100;
 
+  const locale = getLocaleFromCourse(userProgress.activeCourse?.title);
+
   return (
     <Quiz
       initialLessonId={lesson.id}
@@ -40,6 +43,7 @@ const LessonIdPage = async ({ params }: LessonIdPageProps) => {
       initialHearts={userProgress.hearts}
       initialPercentage={initialPercentage}
       userSubscription={userSubscription}
+      locale={locale}
     />
   );
 };

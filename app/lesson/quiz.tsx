@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,6 +12,7 @@ import { upsertChallengeProgress } from "@/actions/challenge-progress";
 import { reduceHearts } from "@/actions/user-progress";
 import { MAX_HEARTS } from "@/constants";
 import { challengeOptions, challenges, userSubscription } from "@/db/schema";
+import { type Locale, t } from "@/lib/i18n";
 import { useHeartsModal } from "@/store/use-hearts-modal";
 import { usePracticeModal } from "@/store/use-practice-modal";
 
@@ -34,6 +35,7 @@ type QuizProps = {
         isActive: boolean;
       })
     | null;
+  locale: Locale;
 };
 
 export const Quiz = ({
@@ -42,6 +44,7 @@ export const Quiz = ({
   initialLessonId,
   initialLessonChallenges,
   userSubscription,
+  locale,
 }: QuizProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [correctAudio, _c, correctControls] = useAudio({ src: "/correct.wav" });
@@ -49,9 +52,9 @@ export const Quiz = ({
   const [incorrectAudio, _i, incorrectControls] = useAudio({
     src: "/incorrect.wav",
   });
-  const [finishAudio] = useAudio({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [finishAudio, _f, finishControls] = useAudio({
     src: "/finish.mp3",
-    autoPlay: true,
   });
   const { width, height } = useWindowSize();
 
@@ -83,6 +86,11 @@ export const Quiz = ({
 
   const challenge = challenges[activeIndex];
   const options = challenge?.challengeOptions ?? [];
+
+  useEffect(() => {
+    if (!challenge) void finishControls.play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challenge]);
 
   const onNext = () => {
     setActiveIndex((current) => current + 1);
@@ -132,7 +140,7 @@ export const Quiz = ({
               setHearts((prev) => Math.min(prev + 1, MAX_HEARTS));
             }
           })
-          .catch(() => toast.error("Something went wrong. Please try again."));
+          .catch(() => toast.error(t(locale, "somethingWentWrongRetry")));
       });
     } else {
       startTransition(() => {
@@ -148,7 +156,7 @@ export const Quiz = ({
 
             if (!response?.error) setHearts((prev) => Math.max(prev - 1, 0));
           })
-          .catch(() => toast.error("Something went wrong. Please try again."));
+          .catch(() => toast.error(t(locale, "somethingWentWrongRetry")));
       });
     }
   };
@@ -157,6 +165,8 @@ export const Quiz = ({
     return (
       <>
         {finishAudio}
+        {incorrectAudio}
+        {correctAudio}
         <Confetti
           recycle={false}
           numberOfPieces={500}
@@ -182,14 +192,20 @@ export const Quiz = ({
           />
 
           <h1 className="text-lg font-bold text-neutral-700 lg:text-3xl">
-            Great job! <br /> You&apos;ve completed the lesson.
+            {t(locale, "lessonCompleteTitle")} <br />{" "}
+            {t(locale, "lessonCompleteSubtitle")}
           </h1>
 
           <div className="flex w-full items-center gap-x-4">
-            <ResultCard variant="points" value={challenges.length * 10} />
+            <ResultCard
+              variant="points"
+              value={challenges.length * 10}
+              locale={locale}
+            />
             <ResultCard
               variant="hearts"
               value={userSubscription?.isActive ? Infinity : hearts}
+              locale={locale}
             />
           </div>
         </div>
@@ -198,6 +214,7 @@ export const Quiz = ({
           lessonId={lessonId}
           status="completed"
           onCheck={() => router.push("/learn")}
+          locale={locale}
         />
       </>
     );
@@ -205,11 +222,12 @@ export const Quiz = ({
 
   const title =
     challenge.type === "ASSIST"
-      ? "Select the correct meaning"
+      ? t(locale, "selectCorrectMeaning")
       : challenge.question;
 
   return (
     <>
+      {finishAudio}
       {incorrectAudio}
       {correctAudio}
       <Header
@@ -247,6 +265,7 @@ export const Quiz = ({
         disabled={pending || !selectedOption}
         status={status}
         onCheck={onContinue}
+        locale={locale}
       />
     </>
   );

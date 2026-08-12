@@ -40,3 +40,8 @@ next-env.d.ts
 # testing tools
 /ngrok
 /stripe
+
+# android TWA build (generated via bubblewrap, see android-twa/README)
+/android-twa
+*.apk
+*.aab

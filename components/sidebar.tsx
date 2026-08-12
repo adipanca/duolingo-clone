@@ -3,15 +3,17 @@ import { Loader } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { type Locale, t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import { SidebarItem } from "./sidebar-item";
 
 type SidebarProps = {
   className?: string;
+  locale: Locale;
 };
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = ({ className, locale }: SidebarProps) => {
   return (
     <div
       className={cn(
@@ -23,21 +25,33 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
           <Image src="/mascot.svg" alt="Mascot" height={40} width={40} />
 
-          <h1 className="text-2xl font-extrabold tracking-wide text-green-600">
+          <h1 className="text-2xl font-extrabold tracking-wide text-indigo-600">
             Lingo
           </h1>
         </div>
       </Link>
 
       <div className="flex flex-1 flex-col gap-y-2">
-        <SidebarItem label="Learn" href="/learn" iconSrc="/learn.svg" />
         <SidebarItem
-          label="Leaderboard"
+          label={t(locale, "learn")}
+          href="/learn"
+          iconSrc="/learn.svg"
+        />
+        <SidebarItem
+          label={t(locale, "leaderboard")}
           href="/leaderboard"
           iconSrc="/leaderboard.svg"
         />
-        <SidebarItem label="Quests" href="/quests" iconSrc="/quests.svg" />
-        <SidebarItem label="Shop" href="/shop" iconSrc="/shop.svg" />
+        <SidebarItem
+          label={t(locale, "quests")}
+          href="/quests"
+          iconSrc="/quests.svg"
+        />
+        <SidebarItem
+          label={t(locale, "shop")}
+          href="/shop"
+          iconSrc="/shop.svg"
+        />
       </div>
 
       <div className="p-4">

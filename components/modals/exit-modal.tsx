@@ -14,9 +14,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { type Locale, t } from "@/lib/i18n";
 import { useExitModal } from "@/store/use-exit-modal";
 
-export const ExitModal = () => {
+type ExitModalProps = {
+  locale: Locale;
+};
+
+export const ExitModal = ({ locale }: ExitModalProps) => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const { isOpen, close } = useExitModal();
@@ -39,11 +44,11 @@ export const ExitModal = () => {
           </div>
 
           <DialogTitle className="text-center text-2xl font-bold">
-            Wait, don&apos;t go!
+            {t(locale, "exitTitle")}
           </DialogTitle>
 
           <DialogDescription className="text-center text-base">
-            You&apos;re about to leave the lesson. Are you sure?
+            {t(locale, "exitDescription")}
           </DialogDescription>
         </DialogHeader>
 
@@ -55,7 +60,7 @@ export const ExitModal = () => {
               size="lg"
               onClick={close}
             >
-              Keep learning
+              {t(locale, "keepLearning")}
             </Button>
 
             <Button
@@ -67,7 +72,7 @@ export const ExitModal = () => {
                 router.push("/learn");
               }}
             >
-              End session
+              {t(locale, "endSession")}
             </Button>
           </div>
         </DialogFooter>

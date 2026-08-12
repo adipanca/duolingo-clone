@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.duolingo_clone_beige.twa",
+      "sha256_cert_fingerprints": [
+        "08:7E:DF:BA:1D:01:32:E7:7B:63:3D:1F:35:BA:99:74:47:E1:82:52:4E:D1:01:E0:A7:1D:33:D6:B7:D0:C4:66"
+      ]
+    }
+  }
+]

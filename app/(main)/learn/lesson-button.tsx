@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 import { Button } from "@/components/ui/button";
+import { type Locale, t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import "react-circular-progressbar/dist/styles.css";
@@ -16,6 +17,7 @@ type LessonButtonProps = {
   locked?: boolean;
   current?: boolean;
   percentage: number;
+  locale: Locale;
 };
 
 export const LessonButton = ({
@@ -25,6 +27,7 @@ export const LessonButton = ({
   locked,
   current,
   percentage,
+  locale,
 }: LessonButtonProps) => {
   const cycleLength = 8;
   const cycleIndex = index % cycleLength;
@@ -62,8 +65,8 @@ export const LessonButton = ({
       >
         {current ? (
           <div className="relative h-[102px] w-[102px]">
-            <div className="absolute -top-6 left-2.5 z-10 animate-bounce rounded-xl border-2 bg-white px-3 py-2.5 font-bold uppercase tracking-wide text-green-500">
-              Start
+            <div className="absolute -top-6 left-2.5 z-10 animate-bounce rounded-xl border-2 bg-white px-3 py-2.5 font-bold uppercase tracking-wide text-indigo-500">
+              {t(locale, "start")}
               <div
                 className="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 transform border-x-8 border-t-8 border-x-transparent"
                 aria-hidden
@@ -73,7 +76,7 @@ export const LessonButton = ({
               value={Number.isNaN(percentage) ? 0 : percentage}
               styles={{
                 path: {
-                  stroke: "#4ade80",
+                  stroke: "#818cf8",
                 },
                 trail: {
                   stroke: "#e5e7eb",

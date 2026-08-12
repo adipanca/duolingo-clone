@@ -1,14 +1,16 @@
 import { InfinityIcon } from "lucide-react";
 import Image from "next/image";
 
+import { type Locale, t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 type ResultCardProps = {
   value: number;
   variant: "points" | "hearts";
+  locale: Locale;
 };
 
-export const ResultCard = ({ value, variant }: ResultCardProps) => {
+export const ResultCard = ({ value, variant, locale }: ResultCardProps) => {
   const imageSrc = variant === "points" ? "/points.svg" : "/heart.svg";
 
   return (
@@ -26,7 +28,7 @@ export const ResultCard = ({ value, variant }: ResultCardProps) => {
           variant === "hearts" && "bg-rose-500"
         )}
       >
-        {variant === "hearts" ? "Hears Left" : "Total XP"}
+        {variant === "hearts" ? t(locale, "heartsLeft") : t(locale, "totalXp")}
       </div>
 
       <div

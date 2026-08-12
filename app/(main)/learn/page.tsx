@@ -13,6 +13,7 @@ import {
   getUserProgress,
   getUserSubscription,
 } from "@/db/queries";
+import { getLocaleFromCourse } from "@/lib/i18n";
 
 import { Header } from "./header";
 import { Unit } from "./unit";
@@ -44,6 +45,7 @@ const LearnPage = async () => {
     redirect("/courses");
 
   const isPro = !!userSubscription?.isActive;
+  const locale = getLocaleFromCourse(userProgress.activeCourse.title);
 
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
@@ -55,8 +57,8 @@ const LearnPage = async () => {
           hasActiveSubscription={isPro}
         />
 
-        {!isPro && <Promo />}
-        <Quests points={userProgress.points} />
+        {!isPro && <Promo locale={locale} />}
+        <Quests points={userProgress.points} locale={locale} />
       </StickyWrapper>
       <FeedWrapper>
         <Header title={userProgress.activeCourse.title} />
@@ -70,6 +72,7 @@ const LearnPage = async () => {
               lessons={unit.lessons}
               activeLesson={courseProgress.activeLesson}
               activeLessonPercentage={lessonPercentage}
+              locale={locale}
             />
           </div>
         ))}

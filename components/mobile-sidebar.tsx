@@ -1,10 +1,15 @@
 import { Menu } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { type Locale } from "@/lib/i18n";
 
 import { Sidebar } from "./sidebar";
 
-export const MobileSidebar = () => {
+type MobileSidebarProps = {
+  locale: Locale;
+};
+
+export const MobileSidebar = ({ locale }: MobileSidebarProps) => {
   return (
     <Sheet>
       <SheetTrigger>
@@ -12,7 +17,7 @@ export const MobileSidebar = () => {
       </SheetTrigger>
 
       <SheetContent className="z-[100] p-0" side="left">
-        <Sidebar />
+        <Sidebar locale={locale} />
       </SheetContent>
     </Sheet>
   );

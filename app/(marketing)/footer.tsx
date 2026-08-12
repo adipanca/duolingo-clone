@@ -8,6 +8,17 @@ export const Footer = () => {
       <div className="mx-auto flex h-full max-w-screen-lg items-center justify-evenly">
         <Button size="lg" variant="ghost" className="w-full cursor-default">
           <Image
+            src="/en.svg"
+            alt="English"
+            height={32}
+            width={40}
+            className="mr-4 rounded-md"
+          />
+          English
+        </Button>
+
+        <Button size="lg" variant="ghost" className="w-full cursor-default">
+          <Image
             src="/hr.svg"
             alt="Croatian"
             height={32}

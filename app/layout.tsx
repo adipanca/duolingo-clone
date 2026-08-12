@@ -7,22 +7,25 @@ import { HeartsModal } from "@/components/modals/hearts-modal";
 import { PracticeModal } from "@/components/modals/practice-modal";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config";
+import { getLocale } from "@/db/queries";
 
 import "./globals.css";
 
 const font = Nunito({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
-  themeColor: "#22C55E",
+  themeColor: "#6366F1",
 };
 
 export const metadata: Metadata = siteConfig;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <ClerkProvider
       appearance={{
@@ -30,18 +33,18 @@ export default function RootLayout({
           logoImageUrl: "/favicon.ico",
         },
         variables: {
-          colorPrimary: "#22C55E",
+          colorPrimary: "#6366F1",
         },
       }}
       telemetry={false}
       afterSignOutUrl="/"
     >
-      <html lang="en">
+      <html lang={locale}>
         <body className={font.className}>
           <Toaster theme="light" richColors closeButton />
-          <ExitModal />
-          <HeartsModal />
-          <PracticeModal />
+          <ExitModal locale={locale} />
+          <HeartsModal locale={locale} />
+          <PracticeModal locale={locale} />
           {children}
         </body>
       </html>

@@ -3,6 +3,8 @@ import { cache } from "react";
 import { auth } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 
+import { getLocaleFromCourse } from "@/lib/i18n";
+
 import db from "./drizzle";
 import {
   challengeProgress,
@@ -34,6 +36,12 @@ export const getUserProgress = cache(async () => {
   });
 
   return data;
+});
+
+export const getLocale = cache(async () => {
+  const userProgress = await getUserProgress();
+
+  return getLocaleFromCourse(userProgress?.activeCourse?.title);
 });
 
 export const getUnits = cache(async () => {

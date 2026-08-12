@@ -7,15 +7,17 @@ import { toast } from "sonner";
 
 import { upsertUserProgress } from "@/actions/user-progress";
 import { courses, userProgress } from "@/db/schema";
+import { type Locale, t } from "@/lib/i18n";
 
 import { Card } from "./card";
 
 type ListProps = {
   courses: (typeof courses.$inferSelect)[];
   activeCourseId?: typeof userProgress.$inferSelect.activeCourseId;
+  locale: Locale;
 };
 
-export const List = ({ courses, activeCourseId }: ListProps) => {
+export const List = ({ courses, activeCourseId, locale }: ListProps) => {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
@@ -25,7 +27,9 @@ export const List = ({ courses, activeCourseId }: ListProps) => {
     if (id === activeCourseId) return router.push("/learn");
 
     startTransition(() => {
-      upsertUserProgress(id).catch(() => toast.error("Something went wrong."));
+      upsertUserProgress(id).catch(() =>
+        toast.error(t(locale, "somethingWentWrong"))
+      );
     });
   };
 
