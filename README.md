@@ -4,13 +4,13 @@
 
 ![Lingo - Interactive platform for language learning.](/.github/images/img_main.png "Lingo - Interactive platform for language learning.")
 
-[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
-[![GitHub license](https://flat.badgen.net/github/license/sanidhyy/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/blob/main/LICENSE "GitHub license")
-[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/commits/main "Maintenance")
-[![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/branches "GitHub branches")
-[![Github commits](https://flat.badgen.net/github/commits/sanidhyy/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/commits "Github commits")
-[![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/issues "GitHub issues")
-[![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/duolingo-clone/pulls "GitHub pull requests")
+[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/adipanca "Ask Me Anything!")
+[![GitHub license](https://flat.badgen.net/github/license/adipanca/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/blob/main/LICENSE "GitHub license")
+[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/commits/main "Maintenance")
+[![GitHub branches](https://flat.badgen.net/github/branches/adipanca/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/branches "GitHub branches")
+[![Github commits](https://flat.badgen.net/github/commits/adipanca/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/commits "Github commits")
+[![GitHub issues](https://flat.badgen.net/github/issues/adipanca/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/issues "GitHub issues")
+[![GitHub pull requests](https://flat.badgen.net/github/prs/adipanca/duolingo-clone?icon=github&color=black&scale=1.01)](https://github.com/adipanca/duolingo-clone/pulls "GitHub pull requests")
 [![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://lingo-clone.vercel.app/ "Vercel status")
 
 <!-- Table of Contents -->
@@ -289,8 +289,8 @@ Useful resources and dependencies that are used in Lingo.
 
 ## :rocket: Follow Me
 
-[![Follow Me](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy "Follow Me")
-[![Tweet about this project](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fx.com%2F_sanidhyy)](https://x.com/intent/tweet?text=Check+out+this+amazing+app:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2Fduolingo-clone "Tweet about this project")
+[![Follow Me](https://img.shields.io/github/followers/adipanca?style=social&label=Follow&maxAge=2592000)](https://github.com/adipanca "Follow Me")
+[![Tweet about this project](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fx.com%2F_sanidhyy)](https://x.com/intent/tweet?text=Check+out+this+amazing+app:&url=https%3A%2F%2Fgithub.com%2Fadipanca%2Fduolingo-clone "Tweet about this project")
 
 ## :books: Learn More
 
@@ -313,11 +313,11 @@ You can also give this repository a star to show more people and they can use th
 
 ## :star2: Star History
 
-<a href="https://star-history.com/#sanidhyy/duolingo-clone&Timeline">
+<a href="https://star-history.com/#adipanca/duolingo-clone&Timeline">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=sanidhyy/duolingo-clone&type=Timeline&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=sanidhyy/duolingo-clone&type=Timeline" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=sanidhyy/duolingo-clone&type=Timeline" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adipanca/duolingo-clone&type=Timeline&theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=adipanca/duolingo-clone&type=Timeline" />
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=adipanca/duolingo-clone&type=Timeline" />
 </picture>
 </a>
 

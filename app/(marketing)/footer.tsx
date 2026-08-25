@@ -1,11 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
-    <div className="hidden h-20 w-full border-t-2 border-slate-200 p-2 lg:block">
-      <div className="mx-auto flex h-full max-w-screen-lg items-center justify-evenly">
+    <div className="w-full border-t-2 border-slate-200 p-2">
+      <div className="mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-y-2 py-4">
+        <p className="text-xs uppercase tracking-wide text-neutral-400">
+          Supported by
+        </p>
+
+        <div className="flex items-center gap-x-2">
+          <Image
+            src="/udayana.png"
+            alt="Universitas Udayana"
+            height={36}
+            width={36}
+          />
+
+          <span className="text-sm font-semibold text-neutral-500">
+            Universitas Udayana
+          </span>
+        </div>
+
+        <Link
+          href="/privacy-policy"
+          className="text-xs text-neutral-400 underline-offset-2 hover:underline"
+        >
+          Privacy Policy
+        </Link>
+      </div>
+
+      <div className="mx-auto hidden h-20 max-w-screen-lg items-center justify-evenly lg:flex">
         <Button size="lg" variant="ghost" className="w-full cursor-default">
           <Image
             src="/en.svg"

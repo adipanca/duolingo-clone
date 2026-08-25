@@ -62,9 +62,9 @@
   },
   "packageManager": "pnpm@11.11.0",
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "adipanca",
+    "email": "axl.pondz@gmail.com",
+    "url": "https://github.com/adipanca"
   },
   "description": "Interactive platform for language learning with lessons, quizzes, and progress tracking.",
   "keywords": [
@@ -104,12 +104,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/duolingo-clone.git"
+    "url": "https://github.com/adipanca/duolingo-clone.git"
   },
-  "homepage": "https://github.com/sanidhyy/duolingo-clone#readme",
+  "homepage": "https://github.com/adipanca/duolingo-clone#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/duolingo-clone/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/adipanca/duolingo-clone/issues",
+    "email": "axl.pondz@gmail.com"
   },
   "funding": [
     {
