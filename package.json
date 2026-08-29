@@ -14,7 +14,7 @@
     "db:push": "drizzle-kit push",
     "db:prod": "tsx ./scripts/prod.ts",
     "db:seed:en": "tsx ./scripts/seed-english.ts",
-    "db:seed:work": "tsx ./scripts/seed-workplace-terms.ts"
+    "db:seed:jobs": "tsx ./scripts/seed-job-units.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.6.3",
