@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Lingo",
-  description: "How Lingo collects, uses, and protects your data.",
+  title: "Privacy Policy | EMLS",
+  description: "How EMLS collects, uses, and protects your data.",
 };
 
 const LAST_UPDATED = "August 24, 2026";
@@ -20,10 +20,10 @@ const PrivacyPolicyPage = () => {
 
       <div className="mt-8 flex flex-col gap-y-6 text-sm leading-relaxed lg:text-base">
         <p>
-          This Privacy Policy explains how Lingo (&quot;we&quot;,
+          This Privacy Policy explains how EMLS (&quot;we&quot;,
           &quot;our&quot;, or &quot;the app&quot;) collects, uses, and
           protects your information when you use our website and Android
-          application. By using Lingo, you agree to the collection and use
+          application. By using EMLS, you agree to the collection and use
           of information in accordance with this policy.
         </p>
 
@@ -39,7 +39,7 @@ const PrivacyPolicyPage = () => {
                 href="https://clerk.com"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 Clerk
               </a>{" "}
@@ -55,7 +55,7 @@ const PrivacyPolicyPage = () => {
                 href="https://stripe.com"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 Stripe
               </a>
@@ -95,7 +95,7 @@ const PrivacyPolicyPage = () => {
             3. Third-Party Services
           </h2>
           <p className="mt-2">
-            Lingo relies on the following third-party services, each
+            EMLS relies on the following third-party services, each
             governed by its own privacy policy:
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -104,7 +104,7 @@ const PrivacyPolicyPage = () => {
                 href="https://clerk.com/legal/privacy"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 Clerk
               </a>{" "}
@@ -115,7 +115,7 @@ const PrivacyPolicyPage = () => {
                 href="https://stripe.com/privacy"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 Stripe
               </a>{" "}
@@ -126,7 +126,7 @@ const PrivacyPolicyPage = () => {
                 href="https://vercel.com/legal/privacy-policy"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 Vercel
               </a>{" "}
@@ -169,7 +169,7 @@ const PrivacyPolicyPage = () => {
               request to{" "}
               <a
                 href="mailto:axl.pondz@gmail.com"
-                className="text-indigo-600 underline"
+                className="text-indigo-800 underline"
               >
                 axl.pondz@gmail.com
               </a>{" "}
@@ -183,7 +183,7 @@ const PrivacyPolicyPage = () => {
             6. Children&apos;s Privacy
           </h2>
           <p className="mt-2">
-            Lingo is not directed at children under 13, and we do not
+            EMLS is not directed at children under 13, and we do not
             knowingly collect personal information from children under 13.
           </p>
         </section>
@@ -218,7 +218,7 @@ const PrivacyPolicyPage = () => {
             at{" "}
             <a
               href="mailto:axl.pondz@gmail.com"
-              className="text-indigo-600 underline"
+              className="text-indigo-800 underline"
             >
               axl.pondz@gmail.com
             </a>

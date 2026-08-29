@@ -23,10 +23,10 @@ export const Sidebar = ({ className, locale }: SidebarProps) => {
     >
       <Link href="/learn" prefetch>
         <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
-          <Image src="/mascot.svg" alt="Mascot" height={40} width={40} />
+          <Image src="/logo.png" alt="Logo" height={40} width={40} />
 
-          <h1 className="text-2xl font-extrabold tracking-wide text-indigo-600">
-            Lingo
+          <h1 className="text-2xl font-extrabold tracking-wide text-indigo-800">
+            EMLS
           </h1>
         </div>
       </Link>

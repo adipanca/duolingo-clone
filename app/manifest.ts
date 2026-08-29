@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
 
 const manifest = (): MetadataRoute.Manifest => ({
-  name: "Lingo",
-  short_name: "Lingo",
+  name: "EMLS",
+  short_name: "EMLS",
   description:
     "Interactive platform for language learning with lessons, quizzes, and progress tracking.",
   start_url: "/",
   display: "standalone",
   background_color: "#ffffff",
-  theme_color: "#6366F1",
+  theme_color: "#4338CA",
   icons: [
     {
       src: "/icon-192.png",

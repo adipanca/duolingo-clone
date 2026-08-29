@@ -14,7 +14,7 @@ import "./globals.css";
 const font = Nunito({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
-  themeColor: "#6366F1",
+  themeColor: "#4338CA",
 };
 
 export const metadata: Metadata = siteConfig;
@@ -30,10 +30,10 @@ export default async function RootLayout({
     <ClerkProvider
       appearance={{
         options: {
-          logoImageUrl: "/favicon.ico",
+          logoImageUrl: "/logo.png",
         },
         variables: {
-          colorPrimary: "#6366F1",
+          colorPrimary: "#4338CA",
         },
       }}
       telemetry={false}

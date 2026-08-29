@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.codeartisan.lingo",
+      "package_name": "com.codeartisan.emls",
       "sha256_cert_fingerprints": [
         "0D:D3:FC:10:D5:E9:3B:6F:E2:04:AF:7F:BB:15:8E:13:C4:29:8C:9F:EF:10:20:0D:C6:14:28:38:BD:96:21:29"
       ]

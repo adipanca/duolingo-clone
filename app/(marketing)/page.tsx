@@ -19,9 +19,15 @@ export default function MarketingPage() {
       </div>
 
       <div className="flex flex-col items-center gap-y-8">
-        <h1 className="max-w-[480px] text-center text-xl font-bold text-neutral-600 lg:text-3xl">
-          Learn, practice and master new languages with Lingo.
-        </h1>
+        <div className="flex flex-col items-center gap-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-indigo-800">
+            EMLS — English Mobile Learning System
+          </p>
+
+          <h1 className="max-w-[480px] text-center text-xl font-bold text-neutral-600 lg:text-3xl">
+            Learn, practice and master new languages with EMLS.
+          </h1>
+        </div>
 
         <div className="flex w-full max-w-[330px] flex-col items-center gap-y-3">
           <ClerkLoading>

@@ -24,12 +24,21 @@ export const Footer = () => {
           </span>
         </div>
 
-        <Link
-          href="/privacy-policy"
-          className="text-xs text-neutral-400 underline-offset-2 hover:underline"
-        >
-          Privacy Policy
-        </Link>
+        <div className="flex items-center gap-x-4">
+          <Link
+            href="/privacy-policy"
+            className="text-xs text-neutral-400 underline-offset-2 hover:underline"
+          >
+            Privacy Policy
+          </Link>
+
+          <Link
+            href="/delete-account"
+            className="text-xs text-neutral-400 underline-offset-2 hover:underline"
+          >
+            Delete Account
+          </Link>
+        </div>
       </div>
 
       <div className="mx-auto hidden h-20 max-w-screen-lg items-center justify-evenly lg:flex">
